@@ -12,15 +12,19 @@
       <div ng-hide="!!files">EvaporateJS is not available</div>
       <div ng-show="!!files">
         <input type="file" multiple="multiple" evaporate creds-url="/creds" signer-url="/signer" key-prefix="tmp/">
-        <ui>
-          <li ng-repeat="file in files" ng-show="file.completed">
-            {{file.name}} completed, <a ng-href="{{file.url}}" target="_blank">open it</a> in new tab
+        <ul>
+          <li ng-repeat="file in files">
+            <span>{{file.name}}</span>
+            <span ng-show="file.completed"> uploaded, <a ng-href="{{file.url}}" target="_blank">open it</a> in new tab</span>
+            <div class="progress" ng-show="!file.completed">
+              <div class="progress-indicator" style="width: {{file.progress}}%;"></div>
+              <div class="progress-value">
+                <span>{{file.progress || 0}}%</span>
+                <span ng-show="file.timeLeft">({{file.timeLeft}} seconds left)</span>
+              </div>
+            </div>
           </li>
-        </ui>
-        <div class="progress" ng-repeat="file in files" ng-show="!file.completed">
-          <div class="progress-indicator" style="width: {{file.progress}}%;"></div>
-          <div class="progress-value">{{file.progress}}% ({{file.timeLeft}} seconds left)</div>
-        </div>
+        </ul>
       </div>
     </div>
 

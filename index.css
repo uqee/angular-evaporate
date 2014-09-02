@@ -1,5 +1,5 @@
 div.progress {
-  margin: 10px;
+  margin: 7px 0 21px;
   padding: 0;
   width: 540px;
   height: 20px;
@@ -14,7 +14,7 @@ div.progress-indicator {
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0%;
   height: 100%;
 }
 
