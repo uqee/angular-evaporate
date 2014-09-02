@@ -1,0 +1,4 @@
+/node_modules
+.env
+.jshintrc
+npm-debug.log
