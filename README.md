@@ -7,7 +7,7 @@ This code is intended to make an awesome [EvaporateJS](https://github.com/TTLabs
 
 1. Include all files from the `./lib` folder into your project
 2. Add global config variable, it will be passed directly into the EvaporateJS itself (which is also exposed as global variable Evaporate after including evaporate.js):
-```json
+```javascript
 evaporateOptions = {
   signerUrl: '<path to your server's route, which will sign requests with your private aws_secret_key>',
   aws_key:   '<your public aws_access_key>',
@@ -20,7 +20,11 @@ evaporateOptions = {
 ```html
 <input type="file" multiple="multiple" evaporate eva-model="evaData">
 ```
-4. For more information, please, read comments in example files `./example/index.html` and `./example/index.js`
+4. Add angular dependency to your js project:
+```javascript
+angular.module('<your app name>', ['evaporate'])
+```
+5. For more information, please, read comments in example files `./example/index.html` and `./example/index.js`
 
 
 ### Run the example
