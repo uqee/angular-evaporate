@@ -35,6 +35,7 @@ For more information, please, read comments in example files `./example/index.ht
 
 1. Follow instructions to set up your AWS S3 bucket here: [EvaporateJS](https://github.com/TTLabs/EvaporateJS)
 2. Clone the repo `git clone https://github.com/uqee/angular-evaporate.git`
+3. Update `evaporateOptions` in `./example/index.html` with your own info
 3. Navigate into the `./example` folder
 4. If you have [foreman](https://github.com/ddollar/foreman) installed then:
     * Make an `.env` file in the root of clonned directory with this data:
