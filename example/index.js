@@ -1,3 +1,4 @@
+/* global angular, console */
 'use strict';
 angular
   .module('app', ['evaporate'])
@@ -34,6 +35,9 @@ angular
       },
       onFileComplete: function (file) {
         console.log('onComplete || name: %s', file.name);
+      },
+      onFileError: function (file, message) {
+        console.log('onError || message: %s', message);
       }
     };
   }]);
