@@ -56,4 +56,4 @@ For more information, please, read comments in example files `./example/index.ht
 
 ### P.S.
 
-_Always_ add server-side validation for incoming requests to `evaporateOptions.signerUrl`, because in this simple example anyone could send you anything he wants and just get it signed with your secret key.
+_Always_ use server-side validation for incoming requests to `evaporateOptions.signerUrl`, because in this simple example anyone could send you anything he wants and just get it signed with your secret key.
