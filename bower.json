@@ -1,0 +1,17 @@
+{
+    "name": "angular-evaporate",
+    "version": "0.0.2",
+    "main": ["lib/angular-evaporate.js", "lib/evaporate.js"],
+    "description": "AngularJS module for the EvaporateJS library",
+    "keywords": ["upload", "resumable upload", "evaporate", "angular"],
+    "repository": {
+    "type": "git",
+        "url": "https://github.com/uquee/angular-evaporate.git"
+    },
+    "dependencies": {
+        "angular": "*"
+    },
+    "ignore": [
+        ".gitignore"
+    ]
+}
