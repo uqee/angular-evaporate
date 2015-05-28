@@ -1,17 +1,35 @@
 {
-    "name": "angular-evaporate",
-    "version": "0.0.2",
-    "main": ["lib/angular-evaporate.js", "lib/evaporate.js"],
-    "description": "AngularJS module for the EvaporateJS library",
-    "keywords": ["upload", "resumable upload", "evaporate", "angular"],
-    "repository": {
+  "version": "0.0.2",
+  "name": "angular-evaporate",
+  "description": "AngularJS module for the EvaporateJS library",
+  "keywords": [
+    "upload",
+    "resumable upload",
+    "evaporate",
+    "angular"
+  ],
+  "authors": [
+    "Denis Zhbankov",
+    "Marvin Killing"
+  ],
+  "repository": {
     "type": "git",
-        "url": "https://github.com/uquee/angular-evaporate.git"
-    },
-    "dependencies": {
-        "angular": "*"
-    },
-    "ignore": [
-        ".gitignore"
-    ]
-}
+    "url": "https://github.com/uqee/angular-evaporate.git"
+  },
+  "dependencies": {
+    "angular": "1.x",
+    "evaporatejs": "*"
+  },
+  "main": [
+    "lib/angular-evaporate.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/uqee/angular-evaporate"
+} 

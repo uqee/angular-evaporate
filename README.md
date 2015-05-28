@@ -5,9 +5,9 @@ This code is intended to make an awesome [EvaporateJS](https://github.com/TTLabs
 
 ### Get started
 
-Include all files from the `./lib` folder into your project
+Include [evaporate.js](https://github.com/TTLabs/EvaporateJS) and all files from the current project's `./lib` folder into your project
 
-Add global config variable, it will be passed directly into the EvaporateJS itself (which is also exposed as global variable Evaporate after including evaporate.js):
+Add global config variable, it will be passed directly into the EvaporateJS itself (which is also exposed as global variable `Evaporate` after including evaporate.js):
 ```javascript
 evaporateOptions = {
   signerUrl: '<path to your server\'s route, which will sign requests with your private aws_secret_key>',
@@ -33,27 +33,30 @@ For more information, please, read comments in example files `./example/index.ht
 
 ### Run the example
 
-1. Follow instructions to set up your AWS S3 bucket here: [EvaporateJS](https://github.com/TTLabs/EvaporateJS)
-2. Clone the repo `git clone https://github.com/uqee/angular-evaporate.git`
-3. Update `evaporateOptions` in `./example/index.html` with your own info
-3. Navigate into the `./example` folder
-4. If you have [foreman](https://github.com/ddollar/foreman) installed then:
-    * Make an `.env` file in the root of clonned directory with this data:
+1. Clone the repo: `git clone https://github.com/uqee/angular-evaporate.git`
+2. Navigate into the project folder: `cd ./angular-evaporate`
+3. Install frontend deps: `bower install`
+4. Navigate into the example folder: `cd ./example`
+5. Install backend deps: `npm install`
+6. Update credentials:
+  1. Set up your AWS S3 bucket: follow instructions at [EvaporateJS](https://github.com/TTLabs/EvaporateJS)
+  2. Update `evaporateOptions` in `./index.html` according to your own info from the previous step
+7. Run the server:
+  1. If you have [foreman](https://github.com/ddollar/foreman) installed then:
+    * Set environment: create an `.env` file with this data:
     ```
     PORT=<tcp port number>
     AWS_SECRET_KEY=<your private aws_secret_key>
     ```
-    * Run `npm start`
-    * Navigate to `localhost:<PORT>/example`
-5. If you do not:
-    * then you should export all these environment variables manually, e.g.
+    * Run: `npm start`
+  2. If you do not then:
+    * Set environment: manually, e.g.
     ```
     export PORT=<...>; export AWS_SECRET_KEY=<...>;
     ```
-    * ..and then run `node server.js`
-    * Navigate to `localhost:<PORT>/example`
-
+    * Run: `node server.js`
+8. In browser navigate to: `localhost:<PORT>/example`
 
 ### P.S.
 
-_Always_ use server-side validation for incoming requests to `evaporateOptions.signerUrl`, because in this simple example anyone could send you anything he wants and just get it signed with your secret key.
+_Always_ use server-side validation for incoming requests to `evaporateOptions.signerUrl`, because in this simple example anyone could send you anything he wanted and just get it signed with your secret key.
