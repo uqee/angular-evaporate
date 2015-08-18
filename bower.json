@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "angular-evaporate",
   "description": "AngularJS module for the EvaporateJS library",
   "keywords": [
@@ -10,7 +10,8 @@
   ],
   "authors": [
     "Denis Zhbankov",
-    "Marvin Killing"
+    "Marvin Killing",
+    "Eugene Khashin"
   ],
   "repository": {
     "type": "git",
