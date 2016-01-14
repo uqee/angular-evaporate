@@ -34,20 +34,6 @@
     <!-- evaporate.js itself should be included before the angular-evaporate module -->
     <script src="/bower_components/evaporatejs/evaporate.js"></script>
 
-    <!--
-      it's absolutely essential to add evaporate's config before including angular-evaporate module
-      these options are passed directly into EvaporateJS itself
-      for details look at: https://github.com/TTLabs/EvaporateJS
-    -->
-    <script>
-      evaporateOptions = {
-        signerUrl: '/signer',
-        aws_key:   'AKIAI2QNA2EZZQS4SLUQ',
-        bucket:    'motoroller',
-        logging:   false
-      };
-    </script>
-
     <!-- angular-evaporate module -->
     <script src="/lib/angular-evaporate.js"></script>
 
