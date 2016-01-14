@@ -2,3 +2,4 @@
 /example/.env
 /example/node_modules
 .jshintrc
+npm-debug.log
