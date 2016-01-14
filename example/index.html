@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>app</title>
+    <title>angular-evaporate demo</title>
     <link rel="stylesheet" href="/example/index.css">
   </head>
   <body ng-app="app">
+
     <div ng-controller="AppCtrl">
       <div ng-hide="evaData.ready">upload is not available</div>
       <div ng-show="evaData.ready">
@@ -33,22 +34,8 @@
     <!-- evaporate.js itself should be included before the angular-evaporate module -->
     <script src="/bower_components/evaporatejs/evaporate.js"></script>
 
-    <!--
-      it's absolutely essential to add evaporate's config before including angular-evaporate module
-      these options are passed directly into EvaporateJS itself
-      for details look at: https://github.com/TTLabs/EvaporateJS
-    -->
-    <script>
-      evaporateOptions = {
-        signerUrl: '/signer',
-        aws_key:   'AKIAI2QNA2EZZQS4SLUQ',
-        bucket:    'motoroller',
-        logging:   false
-      };
-    </script>
-
     <!-- angular-evaporate module -->
-    <script src="/lib/angular-evaporate.js"></script>
+    <script src="/lib/angular-evaporate.min.js"></script>
 
     <!-- your app module -->
     <script src="/example/index.js"></script>

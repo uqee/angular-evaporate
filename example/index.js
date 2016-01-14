@@ -2,6 +2,19 @@
 'use strict';
 angular
   .module('app', ['evaporate'])
+
+  // it's absolutely essential to config the module beforehand
+  // these options are passed directly into EvaporateJS itself
+  // for details look at: https://github.com/TTLabs/EvaporateJS
+  .config(['evaProvider', function (evaProvider) {
+    evaProvider.config({
+      signerUrl: '/signer',
+      aws_key: 'AKIAI6HJQ7BXS3WOAP5A',
+      bucket: 'motoroller',
+      logging: false
+    });
+  }])
+
   .controller('AppCtrl', ['$scope', function ($scope) {
 
     // this variable is used like a model for particular directive
