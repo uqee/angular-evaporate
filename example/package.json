@@ -1,6 +1,6 @@
 {
   "name": "angular-evaporate",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "export NODE_ENV=development; foreman run node server.js"
