@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "angular": "1.x",
-    "evaporatejs": "*"
+    "evaporatejs": "1.x"
   },
   "main": [
     "lib/angular-evaporate.js"
