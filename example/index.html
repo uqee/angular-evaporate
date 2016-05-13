@@ -9,14 +9,24 @@
   <body ng-app="app">
 
     <div ng-controller="AppCtrl">
-      <div ng-hide="evaData.ready">upload is not available</div>
-      <div ng-show="evaData.ready">
-        <input type="file" multiple="multiple" evaporate eva-model="evaData">
+      <div ng-hide="evaModel.supported">upload is not available</div>
+      <div ng-show="evaModel.supported">
+        <input
+          type="file"
+          multiple="multiple"
+          evaporate
+          eva-config-init="evaConfigInit"
+          eva-config-add="evaConfigAdd"
+          eva-config-name="evaConfigName"
+          eva-model="evaModel"
+        />
         <ul>
-          <li ng-repeat="file in evaData.files">
+          <li ng-repeat="file in evaModel.files">
             <span>{{file.name}}</span>
-            <span ng-show="file.completed"> uploaded, <a ng-href="{{file.url}}" target="_blank">open it</a> in new tab</span>
-            <div class="progress" ng-hide="file.completed">
+            <span ng-show="file.complete"> uploaded, <a ng-href="{{file.url}}" target="_blank">open it</a> in new tab</span>
+            <span ng-show="file.cancelled">[cancelled]</span>
+            <button ng-click="file.cancel()" ng-hide="file.complete||file.cancelled">cancel</button>
+            <div class="progress" ng-hide="file.complete">
               <div class="progress-indicator" style="width: {{file.progress}}%;"></div>
               <div class="progress-value">
                 <span>{{file.progress || 0}}%</span>
@@ -35,7 +45,7 @@
     <script src="/bower_components/evaporatejs/evaporate.js"></script>
 
     <!-- angular-evaporate module -->
-    <script src="/lib/angular-evaporate.min.js"></script>
+    <script src="/lib/angular-evaporate.js"></script>
 
     <!-- your app module -->
     <script src="/example/index.js"></script>

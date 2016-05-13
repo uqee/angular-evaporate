@@ -1,14 +1,17 @@
 {
   "name": "angular-evaporate",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha",
   "private": true,
   "scripts": {
-    "start": "export NODE_ENV=development; foreman run node server.js"
+    "start": "export NODE_ENV=development; foreman run node server.js",
+    "uglify": "./node_modules/.bin/uglifyjs --compress --mangle -o ../lib/angular-evaporate.min.js -- ../lib/angular-evaporate.js"
   },
   "dependencies": {
-    "express": "^4.4.5",
-    "morgan": "^1.3.0",
-    "serve-static": "^1.5.3"
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.10.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "uglify-js": "^2.6.2"
+  }
 }
