@@ -1,5 +1,4 @@
-/bower_components
-/example/.env
-/example/node_modules
-.jshintrc
-npm-debug.log
+/example/angular-evaporate.js
+/lib/angular-evaporate.min.js
+/node_modules
+.env
