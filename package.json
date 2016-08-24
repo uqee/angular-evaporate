@@ -1,0 +1,49 @@
+{
+  "author": {
+    "name": "Denis Zhbankov",
+    "url": "https://github.com/uqee"
+  },
+  "contributors": [
+    {
+      "name": "Marvin Killing",
+      "url": "https://github.com/mkilling"
+    },
+    {
+      "name": "Eugene Khashin",
+      "url": "https://github.com/adastreamer"
+    }
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "evaporate": "^1.5.2"
+  },
+  "description": "AngularJS module for the EvaporateJS library",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.11.1",
+    "uglify-js": "^2.7.3"
+  },
+  "engines": {
+    "node": "4.x"
+  },
+  "homepage": "http://github.com/uqee/angular-evaporate",
+  "keywords": [
+    "upload",
+    "resumable upload",
+    "evaporate",
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "lib/angular-evaporate.js",
+  "name": "angular-evaporate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uqee/angular-evaporate.git"
+  },
+  "scripts": {
+    "uglify": "uglifyjs --compress --mangle --screw-ie8 -o ./lib/angular-evaporate.min.js -- ./lib/angular-evaporate.js",
+    "example": "cp ./lib/angular-evaporate.js ./example/angular-evaporate.js && foreman run node ./example/server.js"
+  },
+  "version": "2.0.0-beta.1"
+}
