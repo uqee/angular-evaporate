@@ -1,6 +1,5 @@
 'use strict';
-var crypto = require('crypto'),
-    app    = require('express')();
+var app = require('express')();
 
 // console logger
 app.use(require('morgan')('dev'));
@@ -9,6 +8,7 @@ app.use(require('morgan')('dev'));
 app.use('/', require('serve-static')( require('path').join(__dirname, '../') ));
 
 // sign data
+var crypto = require('crypto');
 app.use('/signer', function (req, res) {
   res.send(crypto
     .createHmac('sha1', process.env.AWS_SECRET_KEY)
@@ -19,5 +19,5 @@ app.use('/signer', function (req, res) {
 
 // start server
 app.listen(process.env.PORT, function () {
-  console.log('listening on port ' + process.env.PORT);
+  console.log('Started! Navigate to http://localhost:' + process.env.PORT + '/example');
 });
