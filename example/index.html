@@ -1,53 +1,129 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>angular-evaporate</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>angular-evaporate demo</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
   </head>
-  <body ng-app="app">
+  <body ng-app="myApp">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">angular-evaporate</div>
+          <p class="navbar-text">"evaporate" directive demo</p>
+        </div>
+      </div>
+    </nav>
+    <div class="container" ng-controller="myCtrl">
+      <div class="row">
 
-    <div ng-controller="AppCtrl">
-      <div ng-hide="evaModel.supported">upload is not available</div>
-      <div ng-show="evaModel.supported">
-        <input
-          type="file"
-          multiple="multiple"
-          evaporate
-          eva-config-init="evaConfigInit"
-          eva-config-add="evaConfigAdd"
-          eva-config-name="evaConfigName"
-          eva-model="evaModel"
-        />
-        <ul>
-          <li ng-repeat="file in evaModel.files">
-            <span>{{file.name}}</span>
-            <span ng-show="file.complete"> uploaded, <a ng-href="{{file.url}}" target="_blank">open it</a> in new tab</span>
-            <span ng-show="file.cancelled">[cancelled]</span>
-            <button ng-click="file.cancel()" ng-hide="file.complete||file.cancelled">cancel</button>
-            <div class="progress" ng-hide="file.complete">
-              <div class="progress-indicator" style="width: {{file.progress}}%;"></div>
-              <div class="progress-value">
-                <span>{{file.progress || 0}}%</span>
-                <span ng-show="file.timeLeft">({{file.timeLeft}} seconds left)</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <h4>Choose files</h4>
+          <div class="input-group">
+            <label class="input-group-btn">
+              <span class="btn btn-primary">
+                <span>Browse&hellip;</span>
+                <input
+                  type="file"
+                  style="display: none;"
+                  multiple
+                  evaporate
+                  ae-arr-uploads="arrUploads"
+                  ae-obj-conf-constructor="objConfConstructor"
+                  ae-obj-conf-upload="objConfUpload"
+                  ae-fn-custom-naming="fnCustomNaming"
+                  ae-is-rinse-repeat="isRinseRepeat"
+                  ae-is-lazy-start="isLazyStart"
+                  ae-is-supported="isSupported"
+                >
+              </span>
+            </label>
+            <input type="text" class="form-control" readonly value="{{arrUploads.length + ' files queued'}}">
+          </div>
+          <span class="help-block">Evaporate is supported: {{isSupported}}</span>
+        </div>
+
+        <div class="col-xs-6 col-sm-8 col-md-9">
+          <h4>Uploads queue</h4>
+          <p class="text-muted" ng-hide="arrUploads.length">Empty</p>
+          <table class="table table-responsive table-striped">
+            <tbody>
+              <tr ng-repeat="upload in arrUploads">
+
+                <!-- basic info -->
+                <td ng-bind="upload.file.name"></td>
+                <td ng-bind="upload.contentType"></td>
+                <td>{{Math.round(upload.file.size/1024)}}kB</td>
+                <td ng-bind="upload.name"></td>
+
+                <!-- start / resume -->
+                <td>
+                  <span ng-hide="upload.$complete||upload.$cancelled||upload.$error">
+                    <i class="fa fa-fw fa-play"
+                      title="Start or resume an upload"
+                      ng-click="(upload.$start||upload.$resume)()"
+                      ng-show="!upload.$started||upload.$paused"
+                    ></i>
+                  </span>
+                </td>
+
+                <!-- pause -->
+                <td>
+                  <span ng-hide="upload.$complete||upload.$cancelled||upload.$error">
+                    <i class="fa fa-fw fa-pause"
+                      title="Pause an upload"
+                      ng-click="upload.$pause()"
+                      ng-hide="!upload.$started||upload.$paused"
+                    ></i>
+                  </span>
+                </td>
+
+                <!-- stop -->
+                <td>
+                  <span ng-hide="upload.$complete||upload.$cancelled||upload.$error">
+                    <i class="fa fa-fw fa-stop"
+                      title="Dequeue or cancel an upload"
+                      ng-click="(upload.$dequeue||upload.$cancel)()"
+                      ng-hide="!upload.$started||upload.$paused"
+                    ></i>
+                  </span>
+                </td>
+
+                <!-- progressbar -->
+                <td>
+                  <div class="form-horizontal" ng-hide="upload.$complete||upload.$cancelled||upload.$error">
+                    <div class="progress">
+                      <div
+                        class="progress-bar progress-bar-primary progress-bar-striped active"
+                        ng-style="{'width':(upload.$percent||0)+'%'}"
+                        ng-bind="upload.$seconds?upload.$seconds+'s':''"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+
+                <!-- link -->
+                <td>
+                  <a target="_blank" ng-href="{{upload.$url}}" ng-show="upload.$complete">
+                    <i
+                      class="fa fa-fw fa-external-link"
+                      title="Open result in a new tab"
+                    ></i>
+                  </a>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-
-    <!-- angular.js -->
     <script src="../node_modules/angular/angular.js"></script>
-
-    <!-- evaporate.js itself should be included before the angular-evaporate module -->
     <script src="../node_modules/evaporate/evaporate.js"></script>
-
-    <!-- angular-evaporate module -->
     <script src="../lib/angular-evaporate.js"></script>
-
-    <!-- your app module -->
     <script src="index.js"></script>
   </body>
 </html>
