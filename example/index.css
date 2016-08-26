@@ -52,10 +52,16 @@
       color: black;
     }
 
+    .disabled.fa,
+    .disabled > .fa {
+      cursor: initial;
+      color: #d2d2d2;
+    }
+
   /* progressbar */
 
     .progress {
       margin-bottom: 0;
-      min-width: 10em;
+      min-width: 12em;
       width: 100%;
     }
