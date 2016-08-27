@@ -19,7 +19,9 @@
   },
   "description": "AngularJS module for the EvaporateJS library",
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
     "morgan": "^1.7.0",
     "serve-static": "^1.11.1",
     "uglify-js": "^2.7.3"
