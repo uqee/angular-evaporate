@@ -28,9 +28,7 @@ angular
 
         // all native callbacks are wrapped up to automatically take care of status parameters
         // inside every callback <this> points to the current upload instance (AngularEvaporateUpload)
-        complete: function (xhr, awsObjectKey) {
-          console.log('Upload #%f is complete, awsObjectKey = %s', this.$id, awsObjectKey);
-        }
+        error: function (msg) { console.log('Upload #%f failed, msg = %s', this.$id, msg); }
       };
 
       // (optionally) set custom naming function

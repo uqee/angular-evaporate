@@ -18,9 +18,9 @@
       </div>
     </nav>
     <div class="container" ng-controller="myCtrl">
-      <div class="row">
 
-        <!-- input -->
+      <!-- input -->
+      <div class="row">
         <div class="col-xs-6 col-sm-4">
           <h4>Choose files</h4>
           <div class="input-group">
@@ -38,9 +38,9 @@
           <span class="help-block">Evaporate is supported: {{ae.supported}}</span>
         </div>
       </div>
-      <div class="row">
 
-        <!-- uploads -->
+      <!-- uploads -->
+      <div class="row">
         <div class="col-xs-12">
           <h4>Uploads queue</h4>
           <p class="text-muted" ng-hide="ae.$uploads.length">Empty</p>
@@ -54,23 +54,28 @@
                 <td>{{Math.round(upload.file.size/1024)}}kB</td>
 
                 <!-- actions -->
-                <td ng-class="{'disabled':upload.$complete||upload.$cancelled||upload.$error}" style="min-width:7em;">
-                  <i class="fa fa-fw fa-play" title="Start or resume an upload"
-                    ng-class="{'disabled':upload.$started&&!upload.$paused}"
-                    ng-click="(upload.$start||upload.$resume)()"
+                <td class="my-actions">
+                  <i class="fa fa-fw fa-play" title="Start or resume"
+                    ng-class="{'my-disabled':(upload.$started&&!upload.$paused)||upload.$stopped}"
+                    ng-click="upload.$start()"
                   ></i>
-                  <i class="fa fa-fw fa-pause" title="Pause an upload"
-                    ng-class="{'disabled':!upload.$started||upload.$pausing||upload.$paused}"
+                  <i class="fa fa-fw fa-pause" title="Pause"
+                    ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
                     ng-click="upload.$pause()"
                   ></i>
-                  <i class="fa fa-fw fa-stop" title="Dequeue or cancel an upload"
-                    ng-click="(upload.$dequeue||upload.$cancel)()"
+                  <i class="fa fa-fw fa-stop" title="Cancel"
+                    ng-class="{'my-disabled':!upload.$started||upload.$stopped}"
+                    ng-click="upload.$cancel()"
+                  ></i>
+                  <i class="fa fa-fw fa-times" title="Dequeue"
+                    ng-class="{'my-disabled':upload.$started&&!upload.$stopped}"
+                    ng-click="upload.$dequeue()"
                   ></i>
                 </td>
 
                 <!-- progress / result -->
                 <td>
-                  <div class="form-horizontal" ng-hide="!upload.$started||upload.$complete||upload.$cancelled||upload.$error">
+                  <div class="form-horizontal" ng-hide="!upload.$started||upload.$stopped">
                     <div class="progress">
                       <div
                         class="progress-bar progress-bar-primary progress-bar-striped active"

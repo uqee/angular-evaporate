@@ -43,6 +43,10 @@
 
   /* icons */
     
+    .my-actions {
+      min-width: 9em;
+    }
+
     .fa {
       cursor: pointer;
       color: #636363;
@@ -52,9 +56,9 @@
       color: black;
     }
 
-    .disabled.fa,
-    .disabled > .fa {
-      cursor: initial;
+    .my-disabled.fa,
+    .my-disabled .fa {
+      cursor: not-allowed;
       color: #d2d2d2;
     }
 
