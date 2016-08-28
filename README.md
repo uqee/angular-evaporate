@@ -76,10 +76,31 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
     ```
 
 
-## Data
+## `AngularEvaporate` class
+
+Extends `Evaporate`, therefore accepts the same constructor arguments and provides the same functionality, but also introduces additional features. To not interfere with possible future versions, all added object keys start from the `$` symbol.
+
+### Properties
+
+| Property   | Type       | Usage       | Description
+| ---        | ---        | ---         | ---
+| `$uploads` | `Array`    | essential   | instances of `AngularEvaporateUpload`
+| `$apply`   | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
+| `$config`  | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
+| `$namer`   | `Function` | optional    | custom upload naming function (default one just returns a filename)
+| `$url`     | `String`   | cautious    | custom url of the bucket's root directory
+
+### API
+
+| Function   | Arguments                     | Result                         | Description
+| ---        | ---                           | ---                            | ---
+| `$add`     | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | enqueue and start uploading immediately
+| `$enqueue` | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | create an upload and append it to the queue
+| `$dequeue` | `AngularEvaporateUpload`      | `Number` - index in `$uploads` | remove an upload from the queue
+| `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
 
 
-## API
+## `AngularEvaporateUpload` class
 
 
 ## Example
