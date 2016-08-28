@@ -47,5 +47,5 @@
     "start": "node ./example/server.js",
     "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js"
   },
-  "version": "2.0.0-beta.1"
+  "version": "2.0.0-beta.2"
 }
