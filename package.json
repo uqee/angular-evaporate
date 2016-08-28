@@ -1,0 +1,51 @@
+{
+  "author": {
+    "name": "Denis Zhbankov",
+    "url": "https://github.com/uqee"
+  },
+  "contributors": [
+    {
+      "name": "Marvin Killing",
+      "url": "https://github.com/mkilling"
+    },
+    {
+      "name": "Eugene Khashin",
+      "url": "https://github.com/adastreamer"
+    }
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "evaporate": "^1.5.2"
+  },
+  "description": "AngularJS module for the EvaporateJS library",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.11.1",
+    "uglify-js": "^2.7.3"
+  },
+  "engines": {
+    "node": "4.x"
+  },
+  "homepage": "http://github.com/uqee/angular-evaporate",
+  "keywords": [
+    "upload",
+    "resumable upload",
+    "evaporate",
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "lib/angular-evaporate.js",
+  "name": "angular-evaporate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uqee/angular-evaporate.git"
+  },
+  "scripts": {
+    "start": "node ./example/server.js",
+    "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js"
+  },
+  "version": "2.0.0-beta.1"
+}
