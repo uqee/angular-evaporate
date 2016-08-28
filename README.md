@@ -128,6 +128,9 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
 
 
+---
+
+
 ## `AngularEvaporateUpload` class
 
 ### Properties
