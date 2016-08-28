@@ -1,4 +1,4 @@
-> Current release is in beta stage, it will be released as v2.0.0 when tests added.
+> Current release is in beta stage, it will be released as v2.0.0 when tests added. If you're using a 1.x version, please read the corresponding readme from your distribution.
 
 ## angular-evaporate
 
