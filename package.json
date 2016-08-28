@@ -44,7 +44,7 @@
     "url": "https://github.com/uqee/angular-evaporate.git"
   },
   "scripts": {
-    "uglify": "uglifyjs --compress --mangle --screw-ie8 -o ./lib/angular-evaporate.min.js -- ./lib/angular-evaporate.js",
+    "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js",
     "example": "foreman run node ./example/server.js"
   },
   "version": "2.0.0-beta.1"
