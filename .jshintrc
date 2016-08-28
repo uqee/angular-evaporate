@@ -1,0 +1,41 @@
+{
+  // http://www.jshint.com/docs/options/
+
+  // relaxing options
+  "browser": true,
+  "devel": true,
+  "jquery": true,
+  "node": true,
+  "globals": {
+    /* angular */
+    "angular": false,
+    /* mocha */
+    "describe": false,
+    "it": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    /* node */
+    "require": false,
+    "console": false,
+    "process": false,
+    "__dirname": false
+  },
+
+  // enforcing options
+  "bitwise": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "nonew": true,
+  "quotmark": "single",
+  "strict": true,
+  "trailing": true,
+  "undef": true,
+  "unused": "vars"
+}
