@@ -1,3 +1,5 @@
+> Current release is in beta stage, it will be released as v2.0.0 when tests added.
+
 ## angular-evaporate
 
 Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to allow `Angular`-specific usage along with all the native functionality plus additional features. Available injectables:
