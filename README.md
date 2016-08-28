@@ -13,8 +13,8 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
     + calculates progress percent and estimated time,
     + saves status updates with timestamps,
     + saves info, warning and error messages,
-    + binds callbacks to the `$scope`,
-    + binds upload id to the `Evaporate`'s API,
+    + binds `Evaporate`'s API to the upload id,
+    + updates `$scope` on `Evaporate`'s callbacks,
     + manages dependent states (e.g. pausing, paused, resumed - only one can be true),
     + adds meta states (e.g. stopped is when either completed, canceled or failed).
 
@@ -102,30 +102,6 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
 ---
 
 
-## `AngularEvaporate` class
-
-Extends `Evaporate`, therefore accepts the same constructor arguments and provides the same functionality, but also introduces additional features. To not interfere with possible future versions, all added object keys start from the `$` symbol.
-
-### Properties
-
-| Property   | Type       | Usage       | Description
-| ---        | ---        | ---         | ---
-| `$uploads` | `Array`    | essential   | instances of `AngularEvaporateUpload`
-| `$apply`   | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
-| `$config`  | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
-| `$namer`   | `Function` | optional    | custom upload naming function (default one just returns a filename)
-| `$url`     | `String`   | cautious    | custom url of the bucket's root directory
-
-### API
-
-| Function   | Arguments                     | Result                         | Description
-| ---        | ---                           | ---                            | ---
-| `$add`     | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | enqueue and start uploading immediately
-| `$enqueue` | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | create an upload and append it to the queue
-| `$dequeue` | `AngularEvaporateUpload`      | `Number` - index in `$uploads` | remove an upload from the queue
-| `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
-
-
 ## `AngularEvaporateUpload` class
 
 ### Properties
@@ -148,3 +124,27 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | ---       | ---       | ---                                 | ---
 | `$start`  | -         | same as from `Evaporate.add()`      | start or resume this upload if already started
 | `$pause`, `$resume`, `$cancel`  | - | same as from the corresponding `Evaporate[fn](id)`  | alter this upload correspondingly
+
+
+## `AngularEvaporate` class
+
+Extends `Evaporate`, therefore accepts the same constructor arguments and provides the same functionality, but also introduces additional features. To not interfere with possible future versions, all added object keys start from the `$` symbol.
+
+### Properties
+
+| Property   | Type       | Usage       | Description
+| ---        | ---        | ---         | ---
+| `$uploads` | `Array`    | essential   | instances of `AngularEvaporateUpload`
+| `$apply`   | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
+| `$config`  | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
+| `$namer`   | `Function` | optional    | custom upload naming function (default one just returns a filename)
+| `$url`     | `String`   | cautious    | custom url of the bucket's root directory
+
+### API
+
+| Function   | Arguments                     | Result                         | Description
+| ---        | ---                           | ---                            | ---
+| `$add`     | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | enqueue and start uploading immediately
+| `$enqueue` | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | create an upload and append it to the queue
+| `$dequeue` | `AngularEvaporateUpload`      | `Number` - index in `$uploads` | remove an upload from the queue
+| `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
