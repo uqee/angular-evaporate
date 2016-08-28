@@ -132,13 +132,15 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 
 ### Properties
 
-| Property   | Type       | Usage       | Description
-| ---        | ---        | ---         | ---
-| `$uploads` | `Array`    | essential   | instances of `AngularEvaporateUpload`
-| `$apply`   | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
-| `$config`  | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
-| `$namer`   | `Function` | optional    | custom upload naming function (default one just returns a filename)
-| `$url`     | `String`   | cautious    | custom url of the bucket's root directory
+| Property       | Type       | Usage       | Description
+| ---            | ---        | ---         | ---
+| `$uploads`     | `Array`    | essential   | instances of `AngularEvaporateUpload`
+| `$apply`       | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
+| `$config`      | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
+| `$namer`       | `Function` | optional    | custom upload naming function (default one just returns a filename)
+| `$url`         | `String`   | cautious    | custom url of the bucket's root directory
+| `$slothmode`   | `Boolean`  | optional    | (directive) lazy mode option - explicit uploading start
+| `$rinserepeat` | `Boolean`  | optional    | (directive) same files uploading option - clean file input after every select
 
 ### API
 
