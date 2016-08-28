@@ -1,5 +1,33 @@
 ## angular-evaporate
 
+Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to allow `Angular`-specific usage along with all the native functionality plus additional features. Available injectables:
+
+  1. `Evaporate` - native lib.
+  
+  2. `AngularEvaporateException` - dedicated exception handler.
+
+  3. `AngularEvaporateUpload` - file upload handler:
+    + calculates name, url, content type for a new upload,
+    + calculates progress percent and estimated time,
+    + saves status updates with timestamps,
+    + saves info, warning and error messages,
+    + binds callbacks to the `$scope`,
+    + binds upload id to the `Evaporate`'s API,
+    + manages dependent states (e.g. pausing, paused, resumed - only one can be true),
+    + adds meta states (e.g. stopped is when either completed, canceled or failed).
+
+  4. `AngularEvaporate` - uploads queue handler (extends `Evaporate`):
+    + manages uploads queue with an ability for every upload to be started later,
+    + allows to specify a default config, which will be merged with every consequent upload's one,
+    + allows to specify a custom naming function, where current instances of `AngularEvaporateUpload` and `AngularEvaporate` are available.
+
+  5. `angular-evaporate` - directive:
+    + lazy mode option - explicit uploading start,
+    + same files uploading option - clean file input after every select.
+
+
+## Get
+
   1. Install
 
     ```bash
@@ -19,7 +47,7 @@
     ```
 
 
-## Usage
+## Use
 
   1. Inject
 
