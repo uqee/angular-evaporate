@@ -1,4 +1,49 @@
 {
+  "version": "2.0.0-beta.2",
+  "name": "angular-evaporate",
+  "description": "AngularJS module for the EvaporateJS library",
+  "homepage": "http://github.com/uqee/angular-evaporate",
+  "keywords": [
+    "upload",
+    "resumable upload",
+    "evaporate",
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "lib/angular-evaporate.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uqee/angular-evaporate.git"
+  },
+  "engines": {
+    "node": "4.x"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "evaporate": "^1.5.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "chai": "^3.5.0",
+    "diff": "^3.0.0",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "karma": "^1.2.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.1.0",
+    "mocha": "^3.0.2",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.11.1",
+    "uglify-js": "^2.7.3"
+  },
+  "scripts": {
+    "start": "node ./example/server.js",
+    "test": "karma start ./test/karma.conf.js",
+    "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js"
+  },
   "author": {
     "name": "Denis Zhbankov",
     "url": "https://github.com/uqee"
@@ -12,40 +57,5 @@
       "name": "Eugene Khashin",
       "url": "https://github.com/adastreamer"
     }
-  ],
-  "dependencies": {
-    "angular": "^1.5.8",
-    "evaporate": "^1.5.2"
-  },
-  "description": "AngularJS module for the EvaporateJS library",
-  "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "express": "^4.14.0",
-    "font-awesome": "^4.6.3",
-    "morgan": "^1.7.0",
-    "serve-static": "^1.11.1",
-    "uglify-js": "^2.7.3"
-  },
-  "engines": {
-    "node": "4.x"
-  },
-  "homepage": "http://github.com/uqee/angular-evaporate",
-  "keywords": [
-    "upload",
-    "resumable upload",
-    "evaporate",
-    "angular"
-  ],
-  "license": "MIT",
-  "main": "lib/angular-evaporate.js",
-  "name": "angular-evaporate",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uqee/angular-evaporate.git"
-  },
-  "scripts": {
-    "start": "node ./example/server.js",
-    "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js"
-  },
-  "version": "2.0.0-beta.2"
+  ]
 }
