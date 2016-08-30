@@ -11,14 +11,23 @@ module.exports = function (config) {
       'lib/angular-evaporate.js',
       'test/**/*.js'
     ],
-    browsers : [ 'Chrome' ],
-    reporters: [ 'mocha' ],
-    frameworks: [ 'mocha', 'chai' ],
+    frameworks: [
+      'mocha',
+      'chai',
+      'sinon'
+    ],
     plugins: [
       'karma-mocha',
-      'karma-mocha-reporter',
       'karma-chai',
+      'karma-sinon',
+      'karma-mocha-reporter',
       'karma-chrome-launcher'
+    ],
+    browsers : [
+      'Chrome'
+    ],
+    reporters: [
+      'mocha'
     ],
     logLevel: config.LOG_WARN,
     loggers: [{

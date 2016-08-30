@@ -5,6 +5,7 @@
   "globals": {
     "module": false,
     "inject": false,
-    "assert": false
+    "assert": false,
+    "sinon": false
   }
 }
