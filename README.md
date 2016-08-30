@@ -141,9 +141,9 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `contentType` | `String` | optional  | MIME type
 | `$id`         | `Number` | read only | result of the `Evaporate.add()`
 | `$url`        | `String` | read only | full url of the file when it's uploaded
-| `$started`, `$paused`, `$resumed`, `$pausing`, `$cancelled`, `$complete`, `$info`, `$warn`, `$error`, `$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
+| `$started`,<br/>`$paused`,<br/>`$resumed`,<br/>`$pausing`,<br/>`$cancelled`,<br/>`$complete`,<br/>`$info`,<br/>`$warn`,<br/>`$error`,<br/>`$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
 | `$stopped`    | `Number` | optional  | value of either `$complete`, `$cancelled` or `$error`
-| `$infoMsg`, `$warnMsg`, `$errorMsg` | `String` | optional | input parameter of the corresponding callback
+| `$infoMsg`,<br/>`$warnMsg`,<br/>`$errorMsg` | `String` | optional | input parameter of the corresponding callback
 | `$percent`    | `Number` | optional  | current uploading progress
 | `$seconds`    | `Number` | optional  | estimated elapsed time
 
@@ -152,4 +152,4 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | Function | Arguments | Result
 | --- | --- | ---
 | `$start` | - | same as from `Evaporate.add()`
-| `$pause`, `$resume`, `$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
+| `$pause`,<br/>`$resume`,<br/>`$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
