@@ -57,7 +57,7 @@
                 <td class="my-actions">
                   <i class="fa fa-fw fa-play" title="Start or resume"
                     ng-class="{'my-disabled':(upload.$started&&!upload.$paused)||upload.$stopped}"
-                    ng-click="upload.$start()"
+                    ng-click="(upload.$start||upload.$resume)()"
                   ></i>
                   <i class="fa fa-fw fa-pause" title="Pause"
                     ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
