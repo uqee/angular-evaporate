@@ -76,6 +76,13 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
     ```
 
 
+## Test
+
+  ```bash
+  npm install && npm test
+  ```
+
+
 ## Example
 
   1. Configure
