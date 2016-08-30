@@ -76,6 +76,13 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
     ```
 
 
+## Test
+
+  ```bash
+  npm install && npm test
+  ```
+
+
 ## Example
 
   1. Configure
@@ -122,10 +129,15 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 
 | Function   | Arguments                     | Result                         | Description
 | ---        | ---                           | ---                            | ---
-| `$add`     | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | enqueue and start uploading immediately
 | `$enqueue` | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | create an upload and append it to the queue
 | `$dequeue` | `AngularEvaporateUpload`      | `Number` - index in `$uploads` | remove an upload from the queue
 | `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
+| `$add`     | same as for `Evaporate.add()` | same as from `Evaporate.add()` | enqueue and start uploading immediately
+
+| Function | Arguments | Result
+| --- | --- | ---
+| `$startAll`,<br/>`$cancelAll`,<br/>`$dequeueAll` | - | -
+| `$pauseAll`,<br/>`$resumeAll` | same as for `Evaporate[fn](undefined, ...)`, where `fn` is `pause` or `resume` | same as from `Evaporate[fn](undefined, ...)`
 
 
 ---
@@ -141,15 +153,15 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `contentType` | `String` | optional  | MIME type
 | `$id`         | `Number` | read only | result of the `Evaporate.add()`
 | `$url`        | `String` | read only | full url of the file when it's uploaded
-| `$started`, `$paused`,<br/>`$resumed`, `$pausing`,<br/>`$cancelled`, `$complete`,<br/>`$info`, `$warn`,<br/>`$error`, `$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
+| `$started`,<br/>`$paused`,<br/>`$resumed`,<br/>`$pausing`,<br/>`$cancelled`,<br/>`$complete`,<br/>`$info`,<br/>`$warn`,<br/>`$error`,<br/>`$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
 | `$stopped`    | `Number` | optional  | value of either `$complete`, `$cancelled` or `$error`
-| `$infoMsg`, `$warnMsg`, `$errorMsg` | `String` | optional | input parameter of the corresponding callback
+| `$infoMsg`,<br/>`$warnMsg`,<br/>`$errorMsg` | `String` | optional | input parameter of the corresponding callback
 | `$percent`    | `Number` | optional  | current uploading progress
 | `$seconds`    | `Number` | optional  | estimated elapsed time
 
 ### API
 
-| Function  | Arguments | Result                              | Description
-| ---       | ---       | ---                                 | ---
-| `$start`  | -         | same as from `Evaporate.add()`      | start or resume this upload if already started
-| `$pause`, `$resume`, `$cancel`  | - | same as from the corresponding `Evaporate[fn](id)`  | alter this upload correspondingly
+| Function | Arguments | Result
+| --- | --- | ---
+| `$start` | - | same as from `Evaporate.add()`
+| `$pause`,<br/>`$resume`,<br/>`$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
