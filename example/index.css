@@ -23,18 +23,22 @@
 
 /* queue */
 
+  table {
+    font-family: monospace;
+  }
+
   /* row counter */
 
-    table {
+    table > tbody {
       font-family: monospace;
       counter-reset: rowNumber;
     }
 
-    table tr {
+    table > tbody > tr {
       counter-increment: rowNumber;
     }
 
-    table tr td:first-child::before {
+    table > tbody > tr > td:first-child::before {
       content: counter(rowNumber);
       min-width: 1em;
       margin-right: 0.5em;
@@ -43,8 +47,12 @@
 
   /* icons */
     
-    .my-actions {
-      min-width: 9em;
+    .my-actions-1 {
+      min-width: 5em;
+    }
+
+    .my-actions-2 {
+      min-width: 7em;
     }
 
     .fa {
@@ -66,6 +74,6 @@
 
     .progress {
       margin-bottom: 0;
-      min-width: 12em;
+      min-width: 15em;
       width: 100%;
     }
