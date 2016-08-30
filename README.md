@@ -122,10 +122,10 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 
 | Function   | Arguments                     | Result                         | Description
 | ---        | ---                           | ---                            | ---
-| `$add`     | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | enqueue and start uploading immediately
 | `$enqueue` | same as for `Evaporate.add()` | `AngularEvaporateUpload`       | create an upload and append it to the queue
 | `$dequeue` | `AngularEvaporateUpload`      | `Number` - index in `$uploads` | remove an upload from the queue
 | `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
+| `$add`     | same as for `Evaporate.add()` | same as from `Evaporate.add()` | enqueue and start uploading immediately
 
 
 ---
