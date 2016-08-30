@@ -54,46 +54,73 @@
                 <td>{{Math.round(upload.file.size/1024)}}kB</td>
 
                 <!-- actions -->
-                <td class="my-actions">
-                  <i class="fa fa-fw fa-play" title="Start or resume"
-                    ng-class="{'my-disabled':(upload.$started&&!upload.$paused)||upload.$stopped}"
-                    ng-click="(upload.$start||upload.$resume)()"
-                  ></i>
-                  <i class="fa fa-fw fa-pause" title="Pause"
-                    ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
-                    ng-click="upload.$pause({force:true})"
-                  ></i>
-                  <i class="fa fa-fw fa-stop" title="Cancel"
-                    ng-class="{'my-disabled':!upload.$started||upload.$stopped}"
-                    ng-click="upload.$cancel()"
+                <td class="my-actions-1">
+                  <i class="fa fa-fw fa-send-o" title="Start"
+                    ng-class="{'my-disabled':upload.$started}"
+                    ng-click="upload.$start()"
                   ></i>
                   <i class="fa fa-fw fa-times" title="Dequeue"
                     ng-class="{'my-disabled':upload.$started&&!upload.$stopped}"
                     ng-click="upload.$dequeue()"
                   ></i>
                 </td>
+                <td class="my-actions-2">
+                  <i class="fa fa-fw fa-pause" title="Pause"
+                    ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
+                    ng-click="upload.$pause({force:true})"
+                  ></i>
+                  <i class="fa fa-fw fa-play" title="Resume"
+                    ng-class="{'my-disabled':!upload.$started||!upload.$paused||upload.$stopped}"
+                    ng-click="upload.$resume()"
+                  ></i>
+                  <i class="fa fa-fw fa-stop" title="Cancel"
+                    ng-class="{'my-disabled':!upload.$started||upload.$stopped}"
+                    ng-click="upload.$cancel()"
+                  ></i>
+                </td>
 
-                <!-- progress / result -->
+                <!-- progress -->
                 <td>
-                  <div class="form-horizontal" ng-hide="!upload.$started||upload.$stopped">
+                  <div class="form-horizontal">
                     <div class="progress">
                       <div
-                        class="progress-bar progress-bar-primary progress-bar-striped active"
+                        class="progress-bar progress-bar-primary progress-bar-striped"
+                        ng-class="{'active':upload.$started&&!upload.$paused&&!upload.$stopped,'progress-bar-success':upload.$complete}"
                         ng-style="{'width':(upload.$percent||0)+'%'}"
                         ng-bind="upload.$seconds?upload.$seconds+'s':''"
                       ></div>
                     </div>
                   </div>
-                  <a target="_blank" ng-href="{{upload.$url}}" ng-show="upload.$complete">
+                </td>
+
+                <!-- result -->
+                <td>
+                  <a target="_blank" ng-href="{{upload.$url}}">
                     <i
                       class="fa fa-fw fa-external-link"
+                      ng-class="{'my-disabled':!upload.$complete}"
                       title="Open result in a new tab"
                     ></i>
                   </a>
                 </td>
-
               </tr>
             </tbody>
+            <tfoot ng-show="ae.$uploads.length">
+              <tr>
+                <td colspan="3">&gt;&nbsp;all uploads</td>
+                <td class="my-actions-1">
+                  <i class="fa fa-fw fa-send-o" title="Start" ng-click="ae.$startAll()"></i>
+                  <i class="fa fa-fw fa-times" title="Dequeue" ng-click="ae.$dequeueAll()"></i>
+                </td>
+                <td class="my-actions-2">
+                  <i class="fa fa-fw fa-pause" title="Pause" ng-click="ae.$pauseAll({force:true})"></i>
+                  <i class="fa fa-fw fa-play" title="Resume" ng-click="ae.$resumeAll()"></i>
+                  <i class="fa fa-fw fa-stop" title="Cancel" ng-click="ae.$cancelAll()"></i>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
