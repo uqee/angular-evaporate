@@ -61,7 +61,7 @@
                   ></i>
                   <i class="fa fa-fw fa-pause" title="Pause"
                     ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
-                    ng-click="upload.$pause()"
+                    ng-click="upload.$pause({force:true})"
                   ></i>
                   <i class="fa fa-fw fa-stop" title="Cancel"
                     ng-class="{'my-disabled':!upload.$started||upload.$stopped}"
