@@ -51,18 +51,18 @@ describe('AngularEvaporate', function () {
         upload = ae.$uploads[0];
       });
 
-      it('dequeue function is still available', function () {
+      it('start fn was removed', function () {
+        assert.isUndefined(upload.$start);
+      });
+
+      it('dequeue fn is still available', function () {
         assert.isFunction(upload.$dequeue);
       });
 
-      it('has binded functions', function () {
+      it('binded functions were created', function () {
         assert.isFunction(upload.$pause);
         assert.isFunction(upload.$resume);
         assert.isFunction(upload.$cancel);
-      });
-
-      it('start now points to resume', function () {
-        assert.strictEqual(upload.$start, upload.$resume);
       });
 
       it('cancel doesn\'t remove upload from the queue', function () {
