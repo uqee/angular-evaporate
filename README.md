@@ -141,7 +141,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `contentType` | `String` | optional  | MIME type
 | `$id`         | `Number` | read only | result of the `Evaporate.add()`
 | `$url`        | `String` | read only | full url of the file when it's uploaded
-| `$started`, `$paused`,<br/>`$resumed`, `$pausing`,<br/>`$cancelled`, `$complete`,<br/>`$info`, `$warn`,<br/>`$error`, `$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
+| `$started`, `$paused`, `$resumed`, `$pausing`, `$cancelled`, `$complete`, `$info`, `$warn`, `$error`, `$progress` | `Number` | optional | `Date.now()` of every `Evaporate`'s callback fired
 | `$stopped`    | `Number` | optional  | value of either `$complete`, `$cancelled` or `$error`
 | `$infoMsg`, `$warnMsg`, `$errorMsg` | `String` | optional | input parameter of the corresponding callback
 | `$percent`    | `Number` | optional  | current uploading progress
@@ -152,4 +152,4 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | Function | Arguments | Result
 | --- | --- | ---
 | `$start` | - | same as from `Evaporate.add()`
-| `$pause`,<br/>`$resume`,<br/>`$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
+| `$pause`, `$resume`, `$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
