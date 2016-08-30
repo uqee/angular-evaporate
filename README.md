@@ -149,7 +149,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 
 ### API
 
-| Function  | Arguments | Result                              | Description
-| ---       | ---       | ---                                 | ---
-| `$start`  | -         | same as from `Evaporate.add()`      | start or resume this upload if already started
-| `$pause`, `$resume`, `$cancel`  | - | same as from the corresponding `Evaporate[fn](id)`  | alter this upload correspondingly
+| Function | Arguments | Result
+| --- | --- | ---
+| `$start` | - | same as from `Evaporate.add()`
+| `$pause`,<br/>`$resume`,<br/>`$cancel` | same as for the corresponding `Evaporate[fn](id, ...)` | same as from the corresponding `Evaporate[fn](id, ...)`
