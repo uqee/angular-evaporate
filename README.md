@@ -127,6 +127,11 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$start`   | `AngularEvaporateUpload`      | same as from `Evaporate.add()` | start uploading an already queued upload
 | `$add`     | same as for `Evaporate.add()` | same as from `Evaporate.add()` | enqueue and start uploading immediately
 
+| Function | Arguments | Result
+| --- | --- | ---
+| `$startAll`,<br/>`$cancelAll`,<br/>`$dequeueAll` | - | -
+| `$pauseAll`,<br/>`$resumeAll` | same as for `Evaporate[fn](undefined, ...)`, where `fn` is `pause` or `resume` | same as from `Evaporate[fn](undefined, ...)`
+
 
 ---
 
