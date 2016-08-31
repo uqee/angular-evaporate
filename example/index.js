@@ -1,7 +1,6 @@
-/* global angular, console */
 'use strict';
-angular
-  .module('myApp', ['angular-evaporate'])
+require('angular')
+  .module('myApp', [require('../lib/angular-evaporate')])
   .controller('myCtrl', ['$window', '$scope', 'AngularEvaporate',
     function ($window, $scope, AngularEvaporate) {
 
