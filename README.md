@@ -1,5 +1,3 @@
-> Current release is in beta stage, it will be released as v2.0.0 when tests added. If you're using a 1.x version, please read the corresponding readme from your distribution.
-
 ## angular-evaporate
 
 Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to allow `Angular`-specific usage along with all the native functionality plus additional features. Available injectables:
@@ -119,7 +117,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | ---            | ---        | ---         | ---
 | `$uploads`     | `Array`    | essential   | instances of `AngularEvaporateUpload`
 | `$apply`       | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
-| `$config`      | `Object`   | optional    | default config for an upload (if properties explicitly specified on a consequent call of `$enqueue()` or `$add()`, they would have higher priority)
+| `$config`      | `Object`   | optional    | default config for an upload (explicitly specified properties on a consequent call of `$enqueue()` or `$add()` will have higher priority)
 | `$namer`       | `Function` | optional    | custom upload naming function (instance of `AngularEvaporateUpload` as an input argument, instance of `AngularEvaporate` as *this*), default one just returns a filename
 | `$url`         | `String`   | cautious    | custom url of the bucket's root directory
 | `$slothmode`   | `Boolean`  | optional    | (directive) lazy mode option - explicit uploading start
