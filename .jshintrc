@@ -3,7 +3,7 @@
 
   // relaxing
   "globals": {
-    "angular": false
+    "angular": true
   },
 
   // enforcing
@@ -23,5 +23,6 @@
   "unused": "vars",
 
   // environments
-  "browser": true
+  "browser": true,
+  "browserify": true
 }
