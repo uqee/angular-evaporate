@@ -1,29 +1,79 @@
-div.progress {
-  margin: 7px 0 21px;
-  padding: 0;
-  width: 540px;
-  height: 20px;
-  background-color: #eef;
-  border: 2px solid black;
-}
+/* input */
 
-div.progress-indicator {
-  margin: 0;
-  padding: 0;
-  background-color: #fbcb46;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-}
+  .btn-file {
+      position: relative;
+      overflow: hidden;
+  }
 
-div.progress-value {
-  position: relative;
-  top: -18px;
-  margin: 0;
-  padding: 0;
-  height: 20px;
-  text-align: center;
-  font-weight: bold;
-}
+  .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+  }
+
+/* queue */
+
+  table {
+    font-family: monospace;
+  }
+
+  /* row counter */
+
+    table > tbody {
+      font-family: monospace;
+      counter-reset: rowNumber;
+    }
+
+    table > tbody > tr {
+      counter-increment: rowNumber;
+    }
+
+    table > tbody > tr > td:first-child::before {
+      content: counter(rowNumber);
+      min-width: 1em;
+      margin-right: 0.5em;
+      color: #d2d2d2;
+    }
+
+  /* icons */
+    
+    .my-actions-1 {
+      min-width: 5em;
+    }
+
+    .my-actions-2 {
+      min-width: 7em;
+    }
+
+    .fa {
+      cursor: pointer;
+      color: #636363;
+    }
+
+    .fa:hover {
+      color: black;
+    }
+
+    .my-disabled.fa,
+    .my-disabled .fa {
+      cursor: not-allowed;
+      color: #d2d2d2;
+    }
+
+  /* progressbar */
+
+    .progress {
+      margin-bottom: 0;
+      min-width: 15em;
+      width: 100%;
+    }

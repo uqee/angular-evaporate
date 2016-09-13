@@ -1,5 +1,4 @@
-/bower_components
-/example/.env
-/example/node_modules
-.jshintrc
+/example/bundle.js
+/node_modules
+.env
 npm-debug.log
