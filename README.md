@@ -122,6 +122,8 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$url`         | `String`   | cautious    | custom url of the bucket's root directory
 | `$slothmode`   | `Boolean`  | optional    | (directive) lazy mode option - explicit uploading start
 | `$rinserepeat` | `Boolean`  | optional    | (directive) same files uploading option - clean file input after every select
+| `$change`      | `Function` | optional    | (directive) user definable function that will be run everytime the on-change event fires for directive
+| `$click`       | `Function` | optional    | (directive) user definable function that will be run everytime the on-click event fires for directive
 
 ### API
 
