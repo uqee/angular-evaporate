@@ -11,39 +11,20 @@
     "evaporate",
     "angular"
   ],
-  "version": "2.1.2",
-  "_release": "2.1.2",
-  "_resolution": {
-    "type": "version",
-    "tag": "v2.1.2",
-    "commit": "c332e5e4830b695a33cfc8db16420188cc7ab13d"
-  },
-  "_source": "https://github.com/uqee/angular-evaporate.git",
-  "_target": "*",
-  "_originalSource": "angular-evaporate",
+  "main": [
+    "lib/angular-evaporate.js"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "test"
+  ],
   "dependencies": {
     "angular": "^1.5.8",
     "evaporatejs": "^1.5.2"
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.5.8",
-    "bootstrap": "^3.3.7",
-    "browserify": "^13.1.0",
-    "chai": "^3.5.0",
-    "diff": "^3.0.0",
-    "express": "^4.14.0",
-    "font-awesome": "^4.6.3",
-    "karma": "^1.2.0",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-mocha": "^1.1.1",
-    "karma-mocha-reporter": "^2.1.0",
-    "karma-sinon": "^1.0.5",
-    "mocha": "^3.0.2",
-    "morgan": "^1.7.0",
-    "serve-static": "^1.11.1",
-    "sinon": "^1.17.5",
-    "uglify-js": "^2.7.3"
   },
   "license": "MIT"
 }
