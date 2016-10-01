@@ -1,0 +1,30 @@
+{
+  "name": "angular-evaporate",
+  "homepage": "https://github.com/uqee/angular-evaporate",
+  "description": "AngularJS module for the EvaporateJS library",
+  "authors": [
+    "Denis Zhbankov <denis.zhbankov@gmail.com>"
+  ],
+  "keywords": [
+    "upload",
+    "resumable upload",
+    "evaporate",
+    "angular"
+  ],
+  "main": [
+    "lib/angular-evaporate.js"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "evaporatejs": "^1.5.2"
+  },
+  "license": "MIT"
+}
