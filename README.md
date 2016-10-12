@@ -157,6 +157,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$percent`    | `Number` | optional  | current uploading progress
 | `$seconds`    | `Number` | optional  | estimated elapsed time
 | `$speed`      | `Number` | optional  | upload speed
+| `$speedStr`   | `String` | optional  | upload speed in human readable format
 
 ### API
 
