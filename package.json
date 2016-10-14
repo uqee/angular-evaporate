@@ -46,8 +46,8 @@
     "browserify": "cd example && browserify -o bundle.js index.js",
     "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js",
     "start": "npm run browserify && node ./example/server.js",
-    "start:dev": "foreman run npm start",
-    "test": "karma start ./test/karma.conf.js"
+    "test": "karma start ./test/karma.conf.js",
+    "dev": "foreman run npm start"
   },
   "author": {
     "name": "Denis Zhbankov",
