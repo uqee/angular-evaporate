@@ -119,6 +119,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$apply`       | `Function` | recommended | set this to your `$scope.$apply.bind($scope)` to update UI when needed
 | `$config`      | `Object`   | optional    | default config for an upload (explicitly specified properties on a consequent call of `$enqueue()` or `$add()` will have higher priority)
 | `$namer`       | `Function` | optional    | custom upload naming function (instance of `AngularEvaporateUpload` as an input argument, instance of `AngularEvaporate` as *this*), default one just returns a filename
+| `$speeder`     | `Function` | optional    | custom speedometer function (input: current speed in bytes/second, output: string in readable format, like '1.23 MB/s')
 | `$url`         | `String`   | cautious    | custom url of the bucket's root directory
 | `$slothmode`   | `Boolean`  | optional    | (directive) lazy mode option - explicit uploading start
 | `$rinserepeat` | `Boolean`  | optional    | (directive) same files uploading option - clean file input after every select
@@ -156,8 +157,7 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$infoMsg`,<br/>`$warnMsg`,<br/>`$errorMsg` | `String` | optional | input parameter of the corresponding callback
 | `$percent`    | `Number` | optional  | current uploading progress
 | `$seconds`    | `Number` | optional  | estimated elapsed time
-| `$speed`      | `Number` | optional  | upload speed
-| `$speedStr`   | `String` | optional  | upload speed in human readable format
+| `$speed`      | `String` | optional  | average upload speed
 
 ### API
 
