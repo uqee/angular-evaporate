@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.2.1",
   "name": "angular-evaporate",
   "description": "AngularJS module for the EvaporateJS library",
   "homepage": "http://github.com/uqee/angular-evaporate",
@@ -43,11 +43,11 @@
     "uglify-js": "^2.7.3"
   },
   "scripts": {
-    "start": "npm run-script example.compile && node ./example/server.js",
-    "test": "karma start ./test/karma.conf.js",
-    "example.compile": "cd example && browserify -o bundle.js index.js",
-    "lib.minify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js",
-    "start.env": "foreman run npm start"
+    "browserify": "cd example && browserify -o bundle.js index.js",
+    "uglify": "cd lib && uglifyjs --compress --mangle --screw-ie8 -o angular-evaporate.min.js --source-map angular-evaporate.min.js.map -- angular-evaporate.js",
+    "start": "npm run browserify && node ./example/server.js",
+    "start:dev": "foreman run npm start",
+    "test": "karma start ./test/karma.conf.js"
   },
   "author": {
     "name": "Denis Zhbankov",
@@ -61,6 +61,10 @@
     {
       "name": "Eugene Khashin",
       "url": "https://github.com/adastreamer"
+    },
+    {
+      "name": "Dmytro Riazanov",
+      "url": "https://github.com/ryaz"
     }
   ]
 }

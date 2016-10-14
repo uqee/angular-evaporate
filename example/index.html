@@ -89,7 +89,7 @@
                         ng-style="{'width':(upload.$percent||0)+'%'}"
                       ></div>
                     </div>
-                    {{upload.$seconds ? (upload.$speedStr + ' - ' + upload.$seconds+'s') : ''}}
+                    {{upload.$seconds?(upload.$speed+' - '+upload.$seconds+'s'):''}}
                   </div>
                 </td>
 
