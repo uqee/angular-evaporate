@@ -8,7 +8,7 @@ Reinforces the [`Evaporate`](https://github.com/TTLabs/EvaporateJS) library to a
 
   3. `AngularEvaporateUpload` - file upload handler:
     + calculates name, url, content type for a new upload,
-    + calculates progress percent and estimated time,
+    + calculates progress percent, speed and estimated time,
     + saves status updates with timestamps,
     + saves info, warning and error messages,
     + binds `Evaporate`'s API to the upload id,
@@ -156,6 +156,8 @@ Extends `Evaporate`, therefore accepts the same constructor arguments and provid
 | `$infoMsg`,<br/>`$warnMsg`,<br/>`$errorMsg` | `String` | optional | input parameter of the corresponding callback
 | `$percent`    | `Number` | optional  | current uploading progress
 | `$seconds`    | `Number` | optional  | estimated elapsed time
+| `$speed`      | `Number` | optional  | upload speed
+| `$speedStr`   | `String` | optional  | upload speed in human readable format
 
 ### API
 

@@ -87,9 +87,9 @@
                         class="progress-bar progress-bar-primary progress-bar-striped"
                         ng-class="{'active':upload.$started&&!upload.$paused&&!upload.$stopped,'progress-bar-success':upload.$complete}"
                         ng-style="{'width':(upload.$percent||0)+'%'}"
-                        ng-bind="upload.$seconds?upload.$seconds+'s':''"
                       ></div>
                     </div>
+                    {{upload.$seconds ? (upload.$speedStr + ' - ' + upload.$seconds+'s') : ''}}
                   </div>
                 </td>
 
