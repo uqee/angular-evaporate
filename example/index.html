@@ -47,13 +47,11 @@
           <table class="table table-responsive table-striped">
             <tbody>
               <tr ng-repeat="upload in ae.$uploads">
-
                 <!-- basic info -->
                 <td ng-bind="upload.name"></td>
                 <td ng-bind="upload.contentType"></td>
                 <td>{{Math.round(upload.file.size/1024)}}kB</td>
 
-                <!-- actions -->
                 <td class="my-actions-1">
                   <i class="fa fa-fw fa-send-o" title="Start"
                     ng-class="{'my-disabled':upload.$started}"
@@ -64,33 +62,11 @@
                     ng-click="upload.$dequeue()"
                   ></i>
                 </td>
-                <td class="my-actions-2">
-                  <i class="fa fa-fw fa-pause" title="Pause"
-                    ng-class="{'my-disabled':!upload.$started||upload.$pausing||upload.$paused||upload.$stopped}"
-                    ng-click="upload.$pause({force:true})"
-                  ></i>
-                  <i class="fa fa-fw fa-play" title="Resume"
-                    ng-class="{'my-disabled':!upload.$started||!upload.$paused||upload.$stopped}"
-                    ng-click="upload.$resume()"
-                  ></i>
-                  <i class="fa fa-fw fa-stop" title="Cancel"
-                    ng-class="{'my-disabled':!upload.$started||upload.$stopped}"
-                    ng-click="upload.$cancel()"
-                  ></i>
-                </td>
+                <td class="my-actions-2"></td>
 
                 <!-- progress -->
                 <td>
-                  <div class="form-horizontal">
-                    <div class="progress">
-                      <div
-                        class="progress-bar progress-bar-primary progress-bar-striped"
-                        ng-class="{'active':upload.$started&&!upload.$paused&&!upload.$stopped,'progress-bar-success':upload.$complete}"
-                        ng-style="{'width':(upload.$percent||0)+'%'}"
-                      ></div>
-                    </div>
-                    {{upload.$seconds?(upload.$speed+' - '+upload.$seconds+'s'):''}}
-                  </div>
+                  <upload-progress upload="upload"></upload-progress>
                 </td>
 
                 <!-- result -->
