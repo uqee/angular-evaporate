@@ -1,4 +1,6 @@
 /example/bundle.js
+/lib/*.min.js
+/lib/*.min.js.map
 /node_modules
 .env
 npm-debug.log
